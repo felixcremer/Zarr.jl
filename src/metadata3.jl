@@ -175,7 +175,7 @@ function Metadata3(d::AbstractDict, fill_as_missing)
         for key in keys(d)
             if key ∉ ("zarr_format", "node_type", "attributes")
             if !must_understand(d[key])
-                @warn "Zarr v3 group metadata has an unrecognized key called $key with must_understand=false; ignoring"
+                #@warn "Zarr v3 group metadata has an unrecognized key called $key with must_understand=false; ignoring"
             else
                 throw(ArgumentError("Zarr v3 group metadata has an unrecognized key called $key with must_understand=true"))
             end
